@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './header'
-import Provider from 'react-redux'
+import {Provider} from 'react-redux'
 
 const store = {}
 

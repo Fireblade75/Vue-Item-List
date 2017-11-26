@@ -2,9 +2,9 @@ import '../css/main.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import App from './components/app'
-import { createStore } from 'redux'
+import storeFactory from './state/store-factory'
 
-const store = createStore(editorApp);
+const store = storeFactory();
 
 ReactDOM.render(
   <App store={store} />,

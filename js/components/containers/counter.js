@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import Counter from '../counter';
-
+import {increaseHomeScore, increaseOutScore, clearScores} from '../../state/actions'
 
 const mapStateToProps = state => {
   return {
@@ -12,22 +12,22 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addHomeScore() {
+    addHomeScore(amount) {
       dispatch(
-        setLoginUsername(username)
+        increaseHomeScore(amount)
       );
     },
-    addOutScore() {
+    addOutScore(amount) {
       dispatch(
-        setLoginPassword(password)
+        increaseOutScore(amount)
       );
     },
     clearScores() {
       dispatch(
-        setLoginPassword(password)
+        clearScores()
       );
     }
   }
 } 
   
-export default connect(mapStateToProps)(Counter);
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);

@@ -12,14 +12,14 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    addHomeScore(amount) {
+    addHomeScore() {
       dispatch(
-        increaseHomeScore(amount)
+        increaseHomeScore(1)
       );
     },
-    addOutScore(amount) {
+    addOutScore() {
       dispatch(
-        increaseOutScore(amount)
+        increaseOutScore(1)
       );
     },
     clearScores() {

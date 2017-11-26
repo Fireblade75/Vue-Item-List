@@ -1,5 +1,6 @@
 import React from 'react'
 import Header from './header'
+import Counter from './counter'
 import {Provider} from 'react-redux'
 
 const store = {}

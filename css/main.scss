@@ -1,13 +1,2 @@
-$color_primary: 
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  font-family: helvetica, arial, sans-serif;
-}
-
-header {
-  
-}
+@import 'normalize';
+@import 'style-app';

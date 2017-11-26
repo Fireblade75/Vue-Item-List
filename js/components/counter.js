@@ -4,9 +4,18 @@ class Counter extends React.Component {
   
   render() {
     return (
-      <header>
-        {this.props.title}
-      </header>
+      <div className="counter">
+        <div className="row">
+          <span>Team A</span>
+          <span>{this.props.homeScore}</span>
+          <button className="btn">Goal!</button>
+        </div>
+        <div className="row">
+          <span>Team B</span>
+          <span>{this.props.outScore}</span>
+          <button className="btn">Goal!</button>
+        </div>
+      </div>
     )
   }
 }

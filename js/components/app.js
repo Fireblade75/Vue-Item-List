@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from './header'
-import Counter from './counter'
+import Counter from './containers/counter'
 import {Provider} from 'react-redux'
 
 const store = {}
@@ -16,7 +16,7 @@ class App extends React.Component {
         <div>
           <Header title='Footbal Counter' />
           <main>
-
+            <Counter />
           </main>
         </div>
       </Provider>

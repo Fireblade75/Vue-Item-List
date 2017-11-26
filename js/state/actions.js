@@ -1,4 +1,4 @@
-import C from 'constants'
+import C from './constants'
 
 export function increaseHomeScore () {
   return {
@@ -9,7 +9,7 @@ export function increaseHomeScore () {
 
 export function increaseOutScore () {
   return {
-    type: C.INCREASE_HOME_SCORE,
+    type: C.INCREASE_OUT_SCORE,
     payload: 1
   }
 }

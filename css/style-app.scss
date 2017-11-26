@@ -25,18 +25,39 @@ header {
   width: 600px;
   border: 2px solid $color_primary;
   margin: 64px auto;
-  
-  .row {
-    display: flex;
-    margin: 64px 32px;
-    justify-content: space-between;
-  }
-  
+}
+
+%row {
+  margin: 64px 32px;
+}
+
+.score-row {
+  @extend %row;
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset-row {
+  @extend %row;
+  text-align: center;
   .btn {
-    background-color: $color_primary;
-    border: 1px solid darker($color_primary, 5%);
-    color: white;
-    width: 120px;
-    height: 32px;
+    width: 240px;
+  }
+}
+
+.btn {
+  background-color: $color_primary;
+  border: 2px solid darken($color_primary, 5%);
+  border-radius: 3px;
+  color: white;
+  width: 120px;
+  height: 32px;
+    
+  &:hover {
+    background-color: lighten($color_primary, 10%);
+  }
+    
+  &:active {
+    background-color: lighten($color_primary, 15%);
   }
 }

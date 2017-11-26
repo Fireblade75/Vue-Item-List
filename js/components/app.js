@@ -12,10 +12,12 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <Header title='Footbal Counter' />
-        <main>
-      
-        </main>
+        <div>
+          <Header title='Footbal Counter' />
+          <main>
+
+          </main>
+        </div>
       </Provider>
     )
   }

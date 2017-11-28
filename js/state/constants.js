@@ -1,7 +1,0 @@
-const constants = {
-  INCREASE_HOME_SCORE: 'INCREASE_HOME_SCORE',
-  INCREASE_OUT_SCORE: 'INCREASE_OUT_SCORE',
-  CLEAR_SCORES: 'CLEAR_SCORES'
-}
-
-export default constants

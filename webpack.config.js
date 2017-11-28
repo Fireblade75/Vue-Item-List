@@ -9,14 +9,35 @@ module.exports = {
         filename: "app.js",
     },
     module: {
-        rules: [
-            {
-                test: /\.(js|jsx)$/,
+        rules: [{
+                test: /\.(js)$/,
                 exclude: /(node_modules|bower_components)/,
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['react', 'stage-0', 'env']
+                        presets: ['stage-0', ['env', {
+                            'targets': {
+                                'browsers': ['last 2 versions']
+                            }
+                        }]]
+                    }
+                }
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                        'scss': [
+                            'vue-style-loader',
+                            'css-loader',
+                            'sass-loader'
+                        ],
+                        'sass': [
+                            'vue-style-loader',
+                            'css-loader',
+                            'sass-loader?indentedSyntax'
+                        ]
                     }
                 }
             },
@@ -24,7 +45,7 @@ module.exports = {
                 test: /\.(css)$/,
                 exclude: /(node_modules)/,
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
+                    fallback: 'vue-style-loader',
                     use: ['css-loader?url=false']
                 })
             },
@@ -32,21 +53,16 @@ module.exports = {
                 test: /\.(sass|scss)$/,
                 exclude: /(node_modules)/,
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
+                    fallback: 'vue-style-loader',
                     use: ['css-loader?url=false', 'sass-loader']
                 })
             },
         ]
     },
     plugins: [
-      new ExtractTextPlugin('style.css'),
-      /* new webpack.optimize.UglifyJsPlugin({
-        compress: {
-          warnings: false
-        }
-      }) */
+        new ExtractTextPlugin('style.css')
     ],
     resolve: {
-      extensions: [".js", ".jsx", ".scss", ".sass"],
+        extensions: [".js", ".vue", ".scss", ".sass"],
     }
 };

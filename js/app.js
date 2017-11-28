@@ -1,12 +1,8 @@
 import '../css/main.scss'
-import React from 'react'
-import ReactDOM from 'react-dom'
+import Vue from 'vue'
 import App from './components/app'
-import storeFactory from './state/store-factory'
 
-const store = storeFactory();
-
-ReactDOM.render(
-  <App store={store} />,
-  document.getElementById('react-container')
-);
+const instance = new Vue({
+  el: '#vue-container',
+  render: h => h(App)
+})

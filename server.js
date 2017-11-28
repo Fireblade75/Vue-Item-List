@@ -3,6 +3,7 @@ const express = require('express')
 const webpack = require('webpack')
 const webpackConfig = require('./webpack.config')
 const webpackMiddleware = require("webpack-dev-middleware")
+require('dotenv').config()
 
 const app = express()
 app.use(webpackMiddleware(webpack(webpackConfig), {

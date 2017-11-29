@@ -3,7 +3,7 @@ const webpack = require('webpack')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-    entry: "./js/app",
+    entry: "./js/main",
     output: {
         path: path.join('/'),
         filename: "app.js",
@@ -15,11 +15,11 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['stage-0', ['env', {
+                        presets: [['env', {
                             'targets': {
                                 'browsers': ['last 2 versions']
                             }
-                        }]]
+                        }], 'stage-0'],
                     }
                 }
             },

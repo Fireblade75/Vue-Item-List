@@ -6,5 +6,7 @@ Vue item list is a small project to try some things out with Vue. It is hosted o
 To create this project we used the following libraries and build tools:
 - Express
 - Vue
+- Vuex
+- Socket.io
 - Webpack
 - Babel

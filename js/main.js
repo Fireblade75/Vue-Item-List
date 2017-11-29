@@ -4,7 +4,7 @@ import App from './components/app'
 import io from 'socket.io-client'
 import store from './store'
 
-const socket = io('http://localhost:3000');
+const socket = io();
 Vue.prototype.$socket = socket
 socket.on('posts', (posts) => {
     posts.forEach((post) => {
